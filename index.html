@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickWash Service - Washing Machine Repair</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    /* Mobile-la button onnu keela onnu vara indha style help pannum */
+    .hero-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .btn-call {
+      width: 280px; 
+      padding: 15px; 
+      border-radius: 50px; 
+      background: #25d366; /* WhatsApp Green color */
+      color: white; 
+      text-decoration: none; 
+      font-weight: bold; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      gap: 10px;
+      border: none;
+      font-size: 1rem;
+    }
+    .btn-primary-hero {
+      width: 280px; 
+      padding: 15px; 
+      border-radius: 50px; 
+      background: #00bcd4; 
+      color: white; 
+      text-decoration: none; 
+      font-weight: bold; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">🔧 QuickWash Service</div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#book">Book Now</a>
+  </div>
+</nav>
+
+<section class="hero" style="padding: 60px 20px; text-align: center; background: #1a1a2e; color: white;">
+  <div class="hero-content">
+    <h1 style="font-size: 2.2rem; margin-bottom: 10px;">Washing Machine Repair<br>at Your Doorstep 🏠</h1>
+    <p style="margin-bottom: 25px; opacity: 0.9;">Same Day Service | All Brands | Experienced Technicians</p>
+    
+    <div class="hero-btns">
+      <a href="#book" class="btn-primary-hero">
+        📅 Book Service Now
+      </a>
+
+      <a href="tel:+919445237143" class="btn-call">
+        📞 Call Now: 9445237143
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <h2>Select Your Problem</h2>
+  <div class="problem-grid">
+    <div class="problem-card" onclick="selectProblem(this,'Not Starting')">
+      <div class="icon">⚡</div><p>Not Starting</p>
+    </div>
+    <div class="problem-card" onclick="selectProblem(this,'Water Leaking')">
+      <div class="icon">💧</div><p>Water Leaking</p>
+    </div>
+    <div class="problem-card" onclick="selectProblem(this,'Noisy / Vibrating')">
+      <div class="icon">📳</div><p>Noisy / Vibrating</p>
+    </div>
+    <div class="problem-card" onclick="selectProblem(this,'Drum Not Spinning')">
+      <div class="icon">🔄</div><p>Drum Not Spinning</p>
+    </div>
+    <div class="problem-card" onclick="selectProblem(this,'Not Draining')">
+      <div class="icon">🚰</div><p>Not Draining</p>
+    </div>
+    <div class="problem-card" onclick="selectProblem(this,'Error Code Showing')">
+      <div class="icon">🛑</div><p>Error Code</p>
+    </div>
+    <div class="problem-card" onclick="selectProblem(this,'General Service')">
+      <div class="icon">🔧</div><p>General Service</p>
+    </div>
+    <div class="problem-card" onclick="selectProblem(this,'Other Issue')">
+      <div class="icon">❓</div><p>Other Issue</p>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="section booking-section">
+  <h2>Book Your Service</h2>
+  <div class="form-container">
+    <div class="selected-problem" id="selectedProblem">
+      ⚠️ Please select a problem above first!
+    </div>
+    <div class="form-grid">
+      <input type="text"  id="custName"    placeholder="Full Name *" required>
+      <input type="tel"   id="custPhone"   placeholder="Phone Number *" required>
+      <input type="text"  id="custAddress" placeholder="Your Address *" required>
+      
+      <select id="machineType">
+        <option value="">Select Machine Type</option>
+        <option>Front Load</option>
+        <option>Top Load</option>
+        <option>Semi Automatic</option>
+      </select>
+      
+      <select id="brand">
+        <option value="">Select Brand</option>
+        <option>Samsung</option>
+        <option>LG</option>
+        <option>Whirlpool</option>
+        <option>IFB</option>
+        <option>Bosch</option>
+        <option>Godrej</option>
+        <option>Other</option>
+      </select>
+      
+      <input type="date" id="bookingDate">
+    </div>
+
+    <button class="btn-primary full-width" onclick="submitBooking()">
+      ✅ Confirm Booking
+    </button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
