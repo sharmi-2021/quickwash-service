@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
     // Note: Email trigger logic service.js-la middleware-ah irukku, 
     // so inga SMS mattum handle pannalaam.
     try {
-      console.log('📱 Triggering Notifications for sharmilapappu20@gmail.com...');
+      console.log('📱 Triggering Notifications for quickwashservice.chennai@gmail.com...');
       await notifyOwner(booking);
       await notifyCustomer(phone, name, date, slot);
       console.log('✅ Notifications Sent Successfully');
